@@ -10,10 +10,4 @@
 #' @source https://kaggle.com/c/santander-customer-transaction-prediction/data
 #'
 #' @keywords datasets
-#'
-#' @examples
-#' data(kaggleSample)
-#' \donttest{
-#' # heat map of correlation matrix, linked to scatterplots
-#' iplotCorr(geneExpr$expr, geneExpr$genotype, reorder=TRUE)}
 "kaggleSample"

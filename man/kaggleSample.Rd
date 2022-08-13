@@ -16,10 +16,4 @@ data(kaggleSample)
 \description{
 Data was included as it provides good example. N = 2500, p = 200, response balance: o(0) = 2245, o(1) = 255
 }
-\examples{
-data(kaggleSample)
-\donttest{
-# heat map of correlation matrix, linked to scatterplots
-iplotCorr(geneExpr$expr, geneExpr$genotype, reorder=TRUE)}
-}
 \keyword{datasets}
