@@ -15,6 +15,7 @@
 #'
 #' @return \code{data.table}-type object of the (Conditional) Variable Inclusion Probability
 #'
+#' @importFrom stats coef
 #' @references
 #' \itemize{
 #' \item Bach,Francis. (2008) "Bolasso: model consistent Lasso estimation through the bootstrap". URL https://arxiv.org/abs/0804.1302

@@ -4,7 +4,9 @@
 \name{kaggleSample}
 \alias{kaggleSample}
 \title{Random Sample from Santander Customer Transaction data set from kaggle competition.}
-\format{An object of class \code{data.table} (inherits from \code{data.frame}) with 2500 rows and 202 columns.}
+\format{
+An object of class \code{data.frame} with 2500 rows and 202 columns.
+}
 \source{
 https://kaggle.com/c/santander-customer-transaction-prediction/data
 }

@@ -14,7 +14,7 @@ Depends:
     parallel,
     R (>= 2.10)
 Imports: glmnet
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.2
 Suggests: 
     testthat (>= 3.0.0),
     knitr,
