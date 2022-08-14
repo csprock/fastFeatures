@@ -12,7 +12,8 @@ cVIP(
   record_proportion = 0.05,
   n_iterations,
   l1_lambda,
-  glmnet_family
+  glmnet_family,
+  ...
 )
 }
 \arguments{
@@ -31,6 +32,8 @@ cVIP(
 \item{l1_lambda}{The LASSO L1 penalty parameter}
 
 \item{glmnet_family}{Character string, see glmnet for more information}
+
+\item{...}{further arguments passed to pbmclapply}
 }
 \value{
 \code{data.table}-type object of the (Conditional) Variable Inclusion Probability
