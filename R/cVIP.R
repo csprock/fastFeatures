@@ -10,6 +10,7 @@
 #' @param n_iterations The number of bootstrap replications
 #' @param l1_lambda The LASSO L1 penalty parameter
 #' @param glmnet_family Character string, see glmnet for more information
+#' @param ... further arguments passed to pbmclapply
 #'
 #' @author James Patrick Horine
 #'
@@ -33,13 +34,11 @@
 #'
 #' @export
 
-cVIP <- function(df, target_column, feature_columns, column_proportion, record_proportion = 0.05, n_iterations, l1_lambda, glmnet_family){
+cVIP <- function(df, target_column, feature_columns, column_proportion, record_proportion = 0.05, n_iterations, l1_lambda, glmnet_family, ...){
 
   validate_user_input(df, target_column ,feature_columns)
 
-  num_cores <- parallel::detectCores()
-
-  temp_results <- lapply(X = 1:n_iterations,
+  temp_results <- pbmcapply::pbmclapply(X = 1:n_iterations,
                                         FUN = function(X){
 
                                           samp_mtrx <- sample_matrix(df, target_column, feature_columns, column_proportion, record_proportion)
@@ -50,9 +49,9 @@ cVIP <- function(df, target_column, feature_columns, column_proportion, record_p
                                                                      intercept = FALSE)
 
                                           return(coef(temp_mdl))
-                                        }
+                                        }, 
+                                        ...
   )
-
   res <- compute_results(temp_results)
   return(res)
 }
